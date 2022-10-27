@@ -10,6 +10,14 @@
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
@@ -20,28 +28,185 @@
     <link rel="icon" type="image/x-icon" href="/mock-up/asset/favicon.png" />
   </head>
   <body>
+    
     <header class="bg-dark">
         <nav class="navbar navbar-expand-lg navbar-dark py-3 container-xl">
-            <div class="d-inline-flex p-1 bg-light">matchmydev</div>
-              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavAltMarkup">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+                  <div class="d-inline-flex bg-light logo-padding-tb logo-padding-lr">
+                    <span class="font-semibold">match</span>
+                    <span class="red font-semibold">my</span>
+                    <span class="font-semibold">dev</span>
+                  </div>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNavAltMarkup">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
         </nav>
     </header>
 
     <main class="container-xl">
-          <h1>Search for developers profils</h1>
-          <form>
-            <label for="search" class="form-label">Search for developers</label>
-              <div class="input-group">
-                
-                <input type="text" class="form-control" placeholder="chercher" id="search">
-                <button class="btn btn-outline-secondary" type="button">Search</button>
-                
+
+      <h1>Search for developers profils</h1>
+
+      <form>
+        <label for="search" class="form-label">Search for developers</label>
+          <div class="input-group">
+            
+            <input type="text" class="form-control" placeholder="chercher" id="search">
+            <button class="btn btn-outline-secondary" type="button">Search</button>
+            
+          </div>
+          <div class="form-text">Please enter first or last name.</div>
+      </form>
+
+        <!-- Content here -->
+        <h2>Developers found</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Marshall Frank 🤖</p>
+                <p class="card-text">Externe</p>
+                <p class="card-text">Since 2010/04/27</p>
               </div>
-              <div class="form-text">Please enter first or last name.</div>
-          </form>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Abazli Nibal</p>
+                <p class="card-text">Alternante</p>
+                <p class="card-text">Since 2022/10/03</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Badaoui Mehdy</p>
+                <p class="card-text">Alternant</p>
+                <p class="card-text">Since 2022/03/01</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Benallal Manal</p>
+                <p class="card-text">Alternante</p>
+                <p class="card-text">Since 2020/08/12</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Da Silva laurine</p>
+                <p class="card-text">CDI</p>
+                <p class="card-text">Since 2022/01/10</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Gresset Lindsay</p>
+                <p class="card-text">Interne</p>
+                <p class="card-text">Since 2022/07/27</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Kadziolka Ewa</p>
+                <p class="card-text">Interne</p>
+                <p class="card-text">Since 2022/06/27</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Luton Thomas</p>
+                <p class="card-text">Interne</p>
+                <p class="card-text">Since 2022/05/19</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Madinier Juliette</p>
+                <p class="card-text">Alternante</p>
+                <p class="card-text">Since 2022/09/22</p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Manneville Milena</p>
+                <p class="card-text">Alternante</p>
+                <div class="card-text">Since 2022/10/03</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Subasi Damla</p>
+                <p class="card-text">Externe</p>
+                <div class="card-text">Since 2022/07/14</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Manneville Milena</p>
+                <p class="card-text">Alternante</p>
+                <div class="card-text">Since 2022/10/03</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Munsy Lisa</p>
+                <p class="card-text">Interne</p>
+                <div class="card-text">Since 2022/10/03</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Raulet Olha</p>
+                <p class="card-text">Alternante</p>
+                <div class="card-text">Since 2022/11/07</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Soltani Maroua</p>
+                <p class="card-text">Alternante</p>
+                <div class="card-text">Since 2022/11/16</div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <p class="card-text">Ait Mouhoub Massinissa</p>
+                <p class="card-text">VIP</p>
+                <div class="card-text">Since 2001/12/31</div>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
-    
-</body>
+ 
+  </body>
+>>>>>>> 267be7df3ec9160e983d45a2f5d1ca9687f852df
 </html>
