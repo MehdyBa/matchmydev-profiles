@@ -45,3 +45,22 @@
     padding-left: 40px;
     padding-right: 40px;
 }
+
+.form-control :focus{
+    border-color: red;
+
+}
+
+.input-group button {
+    background-color: dimgray;
+    border : 0.07rem solid black;
+    color : black;
+    letter-spacing: 0.1rem;
+}
+
+.input-group button:hover{
+    background-color: #DCDCDC;
+    border : 0.07rem solid black;
+    color : black;
+    box-shadow : 0px 0px 5px 4px #DCDCDC;
+}
