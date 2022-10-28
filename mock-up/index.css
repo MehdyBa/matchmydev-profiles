@@ -2,6 +2,9 @@
 .black {
     color: #000000;
 }
+.bg-black {
+    background-color: inherit;
+}
 .red {
     color: #FF0000;
 }
@@ -27,6 +30,9 @@
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
 }
+.white {
+    color: white;
+}
 /* font */ 
 .font-regular {
     font-family: 'Source Sans Pro', sans-serif;
@@ -37,13 +43,27 @@
     font-weight: 600;
 }
 /*styling logo */
-.logo-padding-tb {
-    padding-top: 8px;
-    padding-bottom: 8px;
+
+.font-logo {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    font-size: 2rem;
+
 }
-.logo-padding-lr {
-    padding-left: 40px;
-    padding-right: 40px;
+
+
+.input-group button {
+    background-color: dimgray;
+    border : 0.07rem solid black;
+    color : black;
+    letter-spacing: 0.1rem;
+}
+
+.input-group button:hover{
+    background-color: #DCDCDC;
+    border : 0.07rem solid black;
+    color : black;
+    box-shadow : 0px 0px 5px 4px #DCDCDC;
 }
 
 .form-control:focus {
