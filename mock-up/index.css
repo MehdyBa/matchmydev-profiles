@@ -3,7 +3,7 @@
     color: #000000;
 }
 .bg-black {
-    background-color: #000000;
+    background-color: inherit;
 }
 .red {
     color: #FF0000;
@@ -43,6 +43,10 @@
     font-weight: 600;
 }
 /*styling logo */
-.logo-p {
+
+.font-logo {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
     font-size: 2rem;
+
 }
