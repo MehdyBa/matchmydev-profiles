@@ -45,3 +45,8 @@
     padding-left: 40px;
     padding-right: 40px;
 }
+
+.form-control:focus {
+   border-color: #A9A9A9;
+   box-shadow: 0px 0px 5px 4px #DCDCDC ;
+}
