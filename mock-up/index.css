@@ -51,7 +51,6 @@
 
 }
 
-
 .input-group button {
     background-color: dimgray;
     border : 0.07rem solid black;
@@ -66,7 +65,10 @@
     box-shadow : 0px 0px 5px 4px #DCDCDC;
 }
 
-.form-control:focus {
-   border-color: #A9A9A9;
-   box-shadow: 0px 0px 5px 4px #DCDCDC ;
+
+.form-control:focus{
+    border-color:#A9A9A9;
+    box-shadow: 0px 0px 5px 4px #DCDCDC;
+
 }
+
