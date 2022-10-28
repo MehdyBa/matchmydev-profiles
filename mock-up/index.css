@@ -2,6 +2,9 @@
 .black {
     color: #000000;
 }
+.bg-black {
+    background-color: inherit;
+}
 .red {
     color: #FF0000;
 }
@@ -27,6 +30,9 @@
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
 }
+.white {
+    color: white;
+}
 /* font */ 
 .font-regular {
     font-family: 'Source Sans Pro', sans-serif;
@@ -37,13 +43,12 @@
     font-weight: 600;
 }
 /*styling logo */
-.logo-padding-tb {
-    padding-top: 8px;
-    padding-bottom: 8px;
-}
-.logo-padding-lr {
-    padding-left: 40px;
-    padding-right: 40px;
+
+.font-logo {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    font-size: 2rem;
+
 }
 
 .form-control :focus{
