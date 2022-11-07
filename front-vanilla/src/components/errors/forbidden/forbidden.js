@@ -1,4 +1,5 @@
 import {messages} from "../messages.js";
+import "./forbidden.css";
 
 function renderForbidden(){
 
