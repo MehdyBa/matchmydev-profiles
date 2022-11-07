@@ -8,7 +8,7 @@ function renderSearchProfiles (){
         <form class="mb-3 mt-4">
             <label for="search" class="form-label">Search for developers</label>
             <div class="input-group">
-                <input type="text" class="form-control" id="search" />
+                <input name="search-dev" id="search" type="text" class="form-control" />
                 <span class="input-group-text"><i class="bi bi-search"></i></span>
                 <button class="btn" type="submit">Search</button>
             </div>

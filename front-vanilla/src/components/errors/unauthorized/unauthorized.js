@@ -1,5 +1,5 @@
 import {messages} from "../messages.js";
-
+import "./unauthorized.css";
 
 function renderUnauthorized() {
     const content =
