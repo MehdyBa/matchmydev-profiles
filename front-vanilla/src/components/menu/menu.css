@@ -1,1 +1,50 @@
 /*menu.css*/
+
+body {
+    color:#000000;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/*styling logo */
+
+.font-logo {
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
+    font-size: 2rem;
+    color: white;
+
+}
+.logo-center {
+    color: #f00;
+}
+.btn {
+    background-color: #A9A9A9;
+    border-color: #A9A9A9 ;
+    letter-spacing: 0.1rem;
+    font-weight:600;
+}
+
+.btn:hover{
+    background-color: #DCDCDC;
+    border-color:#A9A9A9;
+    box-shadow : 0px 0px 5px 4px #DCDCDC;
+}
+
+.form-control{
+    border-right: none;
+}
+
+.form-control:focus{
+    border: none;
+    box-shadow: 0px 0px 5px 4px #DCDCDC;
+
+}
+
+.form-text {
+    color: #A9A9A9;
+}
+
+.navbar {
+    padding-left: 0.75rem;
+    padding-right:0.75rem;
+}
