@@ -1,3 +1,25 @@
 {
-    
-}
+    "errors" : {
+        "forbidden": {
+            "h1": "403 Forbidden",
+            "p": "You don't have the permission to access on this server!",
+            "img": "../../../assets/forbidden.svg"
+        },
+        "internalServerError": {
+            "h1": "500 Internal Server Error",
+            "p": "Server encountered an unexpected condition.",
+            "img": "../../../assets/internalServerError.svg"
+        },
+        "notFound": {
+            "h1": "404 Page not found",
+            "p": "The ressource requested could not be found on this server!",
+            "img": "../../../assets/notFound.svg"
+        },
+        "unauthorized": {
+            "h1": "401 Unauthorized",
+            "p": "The request was not made because valid credentials for the targeted resource are missing.",
+            "img": "../../../assets/unauthorized.svg"
+        }
+    }
+  }
+
