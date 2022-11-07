@@ -1,4 +1,5 @@
 import "./notFound.css"
+import { messages } from "../../../messages.js"
 
 function renderNotFound() {
     const content = `
