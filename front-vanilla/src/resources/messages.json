@@ -18,7 +18,7 @@
         "unauthorized": {
             "h1": "401 Unauthorized",
             "p": "The request was not made because valid credentials for the targeted resource are missing.",
-            "img": "../../../assets/unauthorizedError.png"
+            "img": "../../../assets/unauthorized.png"
         }
     }
   }

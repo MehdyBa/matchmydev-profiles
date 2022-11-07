@@ -1,5 +1,5 @@
 import {messages} from "../messages.js";
-import internalServerError from internalServerError.css;
+import "./internalServerError.css";
 
 function renderInternalServerError() {
     const internalServerErrorContent = `
