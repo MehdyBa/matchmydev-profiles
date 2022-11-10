@@ -1,4 +1,4 @@
-import { renderNotfound } from "./components/errors/notFound/notFound.js";
+import { renderNotFound } from "./components/errors/notFound/notFound.js";
 import { renderForbidden } from "./components/errors/forbidden/forbidden.js"
 import { renderUnauthorized } from "./components/errors/unauthorized/unauthorized.js"
 import { renderInternalServerError } from "./components/errors/internalServerError/internalServerError.js"
@@ -11,7 +11,7 @@ function route(event) {
     if (hash == "/#/search-profiles" || hash == "") {
         renderSearchProfiles();
     } else if  (hash == "/#/not-found") {
-        renderNotfound();
+        renderNotFound();
     } else if (hash == "/#/forbiden") {
         renderForbidden();
     } else if (hash == "/#/unauthorized") {

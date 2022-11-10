@@ -1,5 +1,4 @@
-import "./searchProfiles.css";
-import {messages} from "../messages.js";
+import {messages} from "../../messages.js";
 
 function renderSearchProfiles (){
     const searchBar = `
