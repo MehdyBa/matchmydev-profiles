@@ -1,4 +1,3 @@
-/*
 let messages = null;
 
 function initMessages(){
@@ -10,4 +9,3 @@ function initMessages(){
 
 
 export {initMessages, messages};
-*/
