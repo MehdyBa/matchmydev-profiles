@@ -1,6 +1,13 @@
-function renderMenu() {
-    const content =
-  `<header class="bg-black fixed-top">
+import BaseComponent from "../BaseComponent";
+
+export default class MenuComponent extends BaseComponent {
+
+  constructor() {
+    super("#header");
+}
+
+template() { 
+  return`<header class="bg-black fixed-top">
   <nav class="navbar navbar-expand-md navbar-dark container-xl">
     <span class="font-logo">
       <span>match</span
@@ -17,9 +24,6 @@ function renderMenu() {
   </nav>
 </header>`
 ;
-    // Target container
-    const header = document.getElementById("header");
-    header.innerHTML = content;
 }
 
-export { renderMenu };
+}

@@ -1,4 +1,5 @@
 import { messages } from "../../../messages.js"
+import Messages from "../../../Messages.js";
 
 function renderNotFound() {
     const content = `

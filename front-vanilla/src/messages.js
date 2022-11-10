@@ -1,12 +1,14 @@
 
-let messages = null;
+export default class Messages {
 
-async function initMessages(){
+    static messages = null;
+  
+    static async init() {
     
-    const response = await fetch(`./src/resources/messages.json`); 
-    messages = await response.json();
-}
+        const response = await fetch(`./src/resources/messages.json`);
 
-
-
-export {initMessages, messages};
+        Messages.messages = await response.json();
+  
+    }
+  }
+  
