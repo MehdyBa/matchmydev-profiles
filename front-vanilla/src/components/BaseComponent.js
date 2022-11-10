@@ -1,21 +1,23 @@
-import Messages  from "../Messages.js";
+import Messages from "../Messages.js";
 
-export default class BaseComponent {
+export default class BaseComponent{
 
-    msg = Messages.messages // instance field
+    msg = Messages.messages;
 
-    selector = null;       // instance field
+    selector = null;
 
-    constructor(selector) {
+    constructor(selector){
         this.selector = selector;
     }
-    
-    render() {
-        const target = document.querySelector(this.selector); // #main #footer, #header
-        target.innerHTML = this.template();
+
+    render(){
+        const target = document.querySelector(this.selector);
+        target.innerHTML = this.template(); 
     }
 
-    template() {
-        return null
+    template(){
+        return null;
     }
+
+
 }

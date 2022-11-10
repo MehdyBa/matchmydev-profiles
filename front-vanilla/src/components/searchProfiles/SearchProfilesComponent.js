@@ -1,7 +1,13 @@
-import {messages} from "../../Messages.js";
+import BaseComponent from "../BaseComponent.js";
 
-function renderSearchProfiles (){
-    const searchBar = `
+export default class SearchProfilesComponent extends BaseComponent{
+
+    constructor(){
+        super("#main");
+    }
+
+    template(){
+        return `
         <h1 class="pt-3">Search for developers profiles</h1>
 
         <form class="mb-3 mt-4">
@@ -18,11 +24,7 @@ function renderSearchProfiles (){
 
       <h2>Developers found</h2>
       <p>No developer found, please review your criteria</p>
-    `;
-
-    const main = document.getElementById("main");
-    main.innerHTML = searchBar;
+      `;
+    }
 
 }
-
-export { renderSearchProfiles};
