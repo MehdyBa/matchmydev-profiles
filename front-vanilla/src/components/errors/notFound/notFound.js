@@ -1,4 +1,4 @@
-import { messages } from "../../../messages.js"
+import { messages } from "../../../Messages.js"
 
 function renderNotFound() {
     const content = `
