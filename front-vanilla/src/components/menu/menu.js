@@ -1,6 +1,3 @@
-import "./menu.css"
-
-
 function renderMenu() {
     const content =
   `<header class="bg-black fixed-top">

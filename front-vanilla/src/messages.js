@@ -1,8 +1,9 @@
+
 let messages = null;
 
-function initMessages(){
+async function initMessages(){
     
-    const response = await fetch(`./src/resources/messages${lang}.json`); // c'est une promise for instant
+    const response = await fetch(`./src/resources/messages.json`); 
     messages = await response.json();
 }
 
