@@ -8,15 +8,15 @@ window.addEventListener("hashchange", (event) => route(event));
 
 function route(event) {
     const hash = window.location.hash;
-    if (hash == "/#/search-profiles" || hash == "") {
+    if (hash == "#/search-profiles" || hash == "") {
         renderSearchProfiles();
-    } else if  (hash == "/#/not-found") {
+    } else if  (hash == "#/not-found") {
         renderNotFound();
-    } else if (hash == "/#/forbiden") {
+    } else if (hash == "#/forbiden") {
         renderForbidden();
-    } else if (hash == "/#/unauthorized") {
+    } else if (hash == "#/unauthorized") {
         renderUnauthorized();
-    } else if (hash == "/#/internal-server-error") {
+    } else if (hash == "#/internal-server-error") {
         renderInternalServerError();
     }
 
