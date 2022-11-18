@@ -1,4 +1,4 @@
-import BaseComponent from  "../BaseComponent.js";
+import BaseComponent from  "../../BaseComponent.js";
 
 export default class NotFoundComponent extends BaseComponent {
 
@@ -6,7 +6,7 @@ export default class NotFoundComponent extends BaseComponent {
         super("#main");
     }
 
-    templete() {
+    template() {
         return `
         <h1>${this.msg.errors.notFound.h1}</h1>
         <p>${this.msg.errors.notFound.p}</p>

@@ -1,6 +1,6 @@
 import BaseComponent from "../BaseComponent.js";
 
-export default class SearchProfilesComponent extends BaseComponent{
+export default class SearchProfilesComponent extends BaseComponent {
 
     constructor(){
         super("#main");

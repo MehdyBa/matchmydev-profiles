@@ -1,4 +1,4 @@
-import BaseComponent from "../BaseComponent.js";
+import BaseComponent from "../../BaseComponent.js";
 
 export default class InternalServerErrorComponent extends BaseComponent {
     constructor() {
