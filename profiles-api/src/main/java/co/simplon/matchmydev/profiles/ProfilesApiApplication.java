@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ProfilesApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ProfilesApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+	SpringApplication.run(ProfilesApiApplication.class, args);
+    }
 
 }

@@ -1,10 +1,16 @@
-import BaseComponent from "../BaseComponent.js";
+import BaseIterableComponent from "../BaseIterableComponent.js";
+import I18N from "../../I18N.js";
 
-export default class SearchProfilesComponent extends BaseComponent {
+export default class SearchProfilesComponent extends BaseIterableComponent {
 
-    constructor(){
-        super("#main");
+    constructor() {
+        super("#main", {
+            url: "http://localhost:8080/profiles",
+            method: "GET",
+            elementsSelector: "#profiles"
+        });
     }
+    
 
     template(){
         return `
@@ -23,8 +29,24 @@ export default class SearchProfilesComponent extends BaseComponent {
       </form>
 
       <h2>Developers found</h2>
-      <p>No developer found, please review your criteria</p>
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-3 font-regular" id="profiles">
+      </div>
       `;
     }
 
+    elementTemplate(element) {
+        return `  <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">${element.firstName}</p>
+            <p class="card-text">${element.lastName}</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span>${element.hiringDate}</p>
+            </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div> `
+    }
+
 }
+
