@@ -19,7 +19,7 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
   <title>Edit Profiles mockup</title>
-  <link rel="stylesheet" href="style/search-profile.css" />
+  <link rel="stylesheet" href="style/edit-profile.css" />
   <link rel="icon" type="image/x-icon" href="./asset/favicon.png" />
 </head>
 
@@ -35,13 +35,13 @@
     </nav>
   </header>
   <main class="container-xl my-5 pt-5">
-    <h1 class="text-center">Search for developers profiles</h1>
-    <div class="row mb-3 mt-4">
-      <div class="col">
+    <h1>My profile</h1>
+    <div class="row row-cols-1 row-cols-md-2 mb-3 mt-4">
+      <div class="col-md-4 mb-5">
         <img src="https://www.berkshireaerial.com/wp-content/uploads/2019/01/facebook-anon-female-icon.jpg"
-          class="rounded" alt="profile icon">
+          class="rounded img-fluid">
       </div>
-      <div class="col">
+      <div class="col-md-4">
         <h2 class="profile-dev-name">Marshall Frank</h2>
         <p>first.last@domain.com</p>
         <p>FMarsha010109</p>
@@ -49,14 +49,24 @@
         <p> <span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> Feb, 02, 1998</p>
         <p>Permanent</p>
       </div>
-      <div class="row mb-3 mt-4">
-        <div class="mb-3">
-          <label for="formFile" class="form-label">Default file input example</label>
-          <input class="form-control" type="file" id="formFile">
-        </div>
-      </div>
-
     </div>
+
+    <div class="mb-3 mt-4">
+      <form>
+
+        <input class="form-control " type="file" id="formFile">
+        <div class="form-text mb-3">Photo, avatar or any image.</div>
+
+        <label for="description" class="form-label">Description</label>
+        <textarea name="description" id="description" class="form-control" rows="10"></textarea>
+        <div class="form-text">Text with maximum of 1000 chars.</div>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary me-md-2" type="submit">Update</button>
+        </div>
+      </form>
+    </div>
+
   </main>
 
 </body>
