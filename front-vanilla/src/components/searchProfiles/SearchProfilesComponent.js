@@ -10,7 +10,7 @@ export default class SearchProfilesComponent extends BaseIterableComponent {
             elementsSelector: "#profiles"
         });
     }
-    
+     
 
     template(){
         return `
