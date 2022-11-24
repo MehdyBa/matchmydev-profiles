@@ -10,6 +10,12 @@ public class ProfileView {
 
     private String lastName;
 
+    private String email;
+
+    private String identifier;
+
+    private String jobTitle;
+
     private Boolean techLead;
 
     private String contractType;
@@ -88,12 +94,38 @@ public class ProfileView {
 	this.description = description;
     }
 
+    public String getEmail() {
+	return email;
+    }
+
+    public void setEmail(String email) {
+	this.email = email;
+    }
+
+    public String getIdentifier() {
+	return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+	this.identifier = identifier;
+    }
+
+    public String getJobTitle() {
+	return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+	this.jobTitle = jobTitle;
+    }
+
     @Override
     public String toString() {
 	return "{id=" + id + ", firstName=" + firstName + ", lastName="
-		+ lastName + ", techLead=" + techLead + ", contractType="
-		+ contractType + ", hiringDate=" + hiringDate + ", avatar="
-		+ avatar + ", description=" + description + "}";
+		+ lastName + ", email=" + email + ", identifier=" + identifier
+		+ ", jobTitle=" + jobTitle + ", techLead=" + techLead
+		+ ", contractType=" + contractType + ", hiringDate="
+		+ hiringDate + ", avatar=" + avatar + ", description="
+		+ description + "}";
     }
 
 }

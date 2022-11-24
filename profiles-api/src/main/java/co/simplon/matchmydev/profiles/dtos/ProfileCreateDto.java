@@ -8,9 +8,17 @@ public class ProfileCreateDto {
 
     private String lastName;
 
+    private String email;
+
+    private String identifier;
+
     private String contractType;
 
     private LocalDate hiringDate;
+
+    private Boolean techLead;
+
+    private String jobTitle;
 
     public ProfileCreateDto() {
 	super();
@@ -48,11 +56,44 @@ public class ProfileCreateDto {
 	this.hiringDate = hiringDate;
     }
 
+    public String getEmail() {
+	return email;
+    }
+
+    public void setEmail(String email) {
+	this.email = email;
+    }
+
+    public String getIdentifier() {
+	return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+	this.identifier = identifier;
+    }
+
+    public Boolean getTechLead() {
+	return techLead;
+    }
+
+    public void setTechLead(Boolean techLead) {
+	this.techLead = techLead;
+    }
+
+    public String getJobTitle() {
+	return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+	this.jobTitle = jobTitle;
+    }
+
     @Override
     public String toString() {
-	return "{firstName=" + firstName + ", lastName=" + lastName
-		+ ", contractType=" + contractType + ", hiringDate="
-		+ hiringDate + "}";
+	return "{firstName=" + firstName + ", lastName=" + lastName + ", email="
+		+ email + ", identifier=" + identifier + ", contractType="
+		+ contractType + ", hiringDate=" + hiringDate + ", techLead="
+		+ techLead + ", jobTitle=" + jobTitle + "}";
     }
 
 }

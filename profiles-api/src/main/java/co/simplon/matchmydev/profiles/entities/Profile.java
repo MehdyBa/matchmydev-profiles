@@ -10,6 +10,10 @@ public class Profile {
 
     private String lastName;
 
+    private String email;
+
+    private String identifier;
+
     private Boolean techLead;
 
     private String contractType;
@@ -19,6 +23,8 @@ public class Profile {
     private String avatar;
 
     private String description;
+
+    private String jobTitle;
 
     public Profile() {
 	// super();
@@ -46,6 +52,22 @@ public class Profile {
 
     public void setLastName(String lastName) {
 	this.lastName = lastName;
+    }
+
+    public String getEmail() {
+	return email;
+    }
+
+    public void setEmail(String email) {
+	this.email = email;
+    }
+
+    public String getIdentifier() {
+	return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+	this.identifier = identifier;
     }
 
     public Boolean getTechLead() {
@@ -88,12 +110,22 @@ public class Profile {
 	this.description = description;
     }
 
+    public String getJobTitle() {
+	return jobTitle;
+    }
+
+    public void setJobTitle(String jobTitle) {
+	this.jobTitle = jobTitle;
+    }
+
     @Override
     public String toString() {
 	return "{id=" + id + ", firstName=" + firstName + ", lastName="
-		+ lastName + ", techLead=" + techLead + ", contractType="
-		+ contractType + ", hiringDate=" + hiringDate + ", avatar="
-		+ avatar + ", description=" + description + "}";
+		+ lastName + ", email=" + email + ", identifier=" + identifier
+		+ ", techLead=" + techLead + ", contractType=" + contractType
+		+ ", hiringDate=" + hiringDate + ", avatar=" + avatar
+		+ ", description=" + description + ", jobTitle=" + jobTitle
+		+ "}";
     }
 
 }
