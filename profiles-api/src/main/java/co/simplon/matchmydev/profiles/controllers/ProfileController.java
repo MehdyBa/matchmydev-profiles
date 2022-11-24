@@ -58,17 +58,22 @@ public class ProfileController {
 		Collection<Profile> profiles = DataBase.findAll();
 		Collection<ProfileView> views = new ArrayList<>();
 		for (Profile profile : profiles) {
-			ProfileView view = new ProfileView();
-			view.setId(profile.getId());
-			view.setFirstName(profile.getFirstName());
-			view.setLastName(profile.getLastName());
-			view.setContractType(profile.getContractType());
-			view.setHiringDate(profile.getHiringDate());
-			view.setAvatar(profile.getAvatar());
-			view.setDescription(profile.getDescription());
+			ProfileView view = buildProfileView(profile);
 			views.add(view);
 		}
 		return views;
+	}
+
+	private static ProfileView buildProfileView(Profile profile) {
+		ProfileView view = new ProfileView();
+		view.setId(profile.getId());
+		view.setFirstName(profile.getFirstName());
+		view.setLastName(profile.getLastName());
+		view.setContractType(profile.getContractType());
+		view.setHiringDate(profile.getHiringDate());
+		view.setAvatar(profile.getAvatar());
+		view.setDescription(profile.getDescription());
+		return view;
 	}
 
 }
