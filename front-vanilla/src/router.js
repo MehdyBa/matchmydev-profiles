@@ -1,9 +1,10 @@
 import MenuComponent from "./components/MenuComponent/MenuComponent.js";
 import SearchProfilesComponent from "./components/searchProfiles/SearchProfilesComponent.js";
-import NotFoundComponent from "./components/errors/notFound/NotFoundComponent.js"
-import ForbidenComponent from "./components/errors/forbidden/ForbidenComponent.js"
-import UnauthorizedComponent from "./components/errors/unauthorized/UnauthorizedComponent.js"
-import InternalServerErrorComponent from "./components/errors/internalServerError/InternalServerErrorComponent.js"
+import NotFoundComponent from "./components/errors/notFound/NotFoundComponent.js";
+import ForbidenComponent from "./components/errors/forbidden/ForbidenComponent.js";
+import UnauthorizedComponent from "./components/errors/unauthorized/UnauthorizedComponent.js";
+import InternalServerErrorComponent from "./components/errors/internalServerError/InternalServerErrorComponent.js";
+import EditProfileComponent from "./components/editProfileComponent/EditProfileComponent.js";
 
 export default class Router {
     static init() {
@@ -26,10 +27,13 @@ export default class Router {
         component = new UnauthorizedComponent();
     } else if (hash == "#/internal-server-error") {
         component = new InternalServerErrorComponent();
+    } else if(hash =="#/edit-profile" ) {
+        component = new EditProfileComponent();
     }
     component.render();
 
     }
+
 }
 
 
