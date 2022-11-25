@@ -39,8 +39,8 @@ export default class SearchProfilesComponent extends BaseIterableComponent {
         return `  <div class="col">
         <div class="card h-100">
           <div class="card-body">
-            <p class="dev-name">${element.firstName}</p>
-            <p class="card-text">${element.lastName}</p>
+            <p class="dev-name">${element.firstName} ${element.lastName}</p>
+            <p class="card-text">${element.contractType}</p>
             <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span>${element.hiringDate}</p>
             </div>
           <div class="card-footer"><i class="bi bi-eye"></i></div>

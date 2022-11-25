@@ -1,3 +1,4 @@
+import HttpClient from "../../HttpClient.js";
 import BaseFormComponent from "../BaseFormComponent.js";
 
 export default class EditProfileComponent extends BaseFormComponent {
@@ -6,20 +7,12 @@ export default class EditProfileComponent extends BaseFormComponent {
         { nonEditableSelector: "#non-editable-profile"
         }) 
      }
-     dataModel() {
-        return{
-           firstName: "Medhy",
-           lastName: "Badaoui",
-           email: "medhy@gmail.com",
-           avatar: "https://www.berkshireaerial.com/wp-content/uploads/2019/01/facebook-anon-female-icon.jpg",
-           description: "Here is my desc...",
-           identifier: null,
-           hiringDate: null, 
-           contractType: null,
-           jobTitle: "Developer"
 
-        }
+     async dataModel() {
+        const remoteModel = await HttpClient.send("http://localhost:8080/profiles/2", "GET");
+        return remoteModel;
      }
+
      nonEditableTemplate(data){
         
         return ` <div class="row row-cols-1 row-cols-md-2 mb-3 mt-4">
@@ -39,20 +32,20 @@ export default class EditProfileComponent extends BaseFormComponent {
      }
 
      template() {
-        return `<h1>My profile</h1>
+        return `<h1>${this.msg.editProfile.h1}</h1>
         <div id="non-editable-profile"></div>
         <div class="mb-3 mt-4">
           <form>
     
             <input class="form-control " type="file" id="formFile">
-            <div class="form-text mb-3">Photo, avatar or any image.</div>
+            <div class="form-text mb-3">${this.msg.editProfile.formText}</div>
     
-            <label for="description" class="form-label">Description</label>
+            <label for="description" class="form-label">${this.msg.editProfile.formLabel}</label>
             <textarea name="description" id="description" class="form-control" rows="10"></textarea>
-            <div class="form-text">Text with maximum of 1000 chars.</div>
+            <div class="form-text">${this.msg.editProfile.formControl}</div>
     
             <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-              <button class="btn btn-primary me-md-2" type="submit">Update</button>
+              <button class="btn btn-primary me-md-2" type="submit">${this.msg.editProfile.button}</button>
             </div>
           </form>
         </div>`;

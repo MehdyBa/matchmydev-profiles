@@ -16,6 +16,16 @@ export default class MenuComponent extends BaseComponent{
                 <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#/search-profiles">Search profiles</a>
+                    </li>
+                        <li class="nav-item">
+                    <a class="nav-link" href="#/edit-profile">My profile</a>
+                    </li>
+                </ul>
+                </div>
             </nav>
         </header>`;
     }

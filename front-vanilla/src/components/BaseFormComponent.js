@@ -7,9 +7,10 @@ export default class BaseFormComponent extends BaseComponent {
         super(selector);
         this.props = props;
     }
-    render(){
+    
+    async render(){
         super.render();
-        const data = this.dataModel();
+        const data = await this.dataModel();
         const properties = Object.keys(data);
         const form = this.target.querySelector("form");
         BaseFormComponent.bind(properties, form, data); 

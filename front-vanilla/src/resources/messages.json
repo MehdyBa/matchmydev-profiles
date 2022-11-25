@@ -24,6 +24,14 @@
             "img": "../../../assets/unauthorized.png" ,
             "alt": "401 Unauthorized"
         }
+    },
+    
+    "editProfile" : {
+        "h1" : "My profile",
+        "formText" : "Photo, avatar or any image.",
+        "formLabel" : "Description",
+        "formControl" : "Text with maximum of 1000 chars.",
+        "button" : "Update"
     }
   }
 
