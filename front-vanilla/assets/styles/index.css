@@ -27,15 +27,17 @@ body {
     border-color: #A9A9A9 ;
     letter-spacing: 0.1rem;
     font-weight:600;
+    color:black;
 }
 
 .btn:hover{
     background-color: #DCDCDC;
     border-color:#A9A9A9;
     box-shadow : 0px 0px 5px 4px #DCDCDC;
+    color:black;
 }
 
-.form-control{
+.search-bar{
     border-right: none;
 }
 

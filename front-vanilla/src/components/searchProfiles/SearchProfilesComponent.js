@@ -19,7 +19,7 @@ export default class SearchProfilesComponent extends BaseIterableComponent {
         <form class="mb-3 mt-4">
             <label for="search" class="form-label">Search for developers</label>
             <div class="input-group">
-                <input name="search-dev" id="search" type="text" class="form-control" />
+                <input name="search-dev" id="search" type="text" class="form-control search-bar" />
                 <span class="input-group-text"><i class="bi bi-search"></i></span>
                 <button class="btn" type="submit">Search</button>
             </div>

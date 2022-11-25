@@ -20,6 +20,10 @@ public class ProfileCreateDto {
 
     private String jobTitle;
 
+    private String avatar;
+
+    private String description;
+
     public ProfileCreateDto() {
 	super();
     }
@@ -88,12 +92,29 @@ public class ProfileCreateDto {
 	this.jobTitle = jobTitle;
     }
 
+    public String getAvatar() {
+	return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+	this.avatar = avatar;
+    }
+
+    public String getDescription() {
+	return description;
+    }
+
+    public void setDescription(String description) {
+	this.description = description;
+    }
+
     @Override
     public String toString() {
 	return "{firstName=" + firstName + ", lastName=" + lastName + ", email="
 		+ email + ", identifier=" + identifier + ", contractType="
 		+ contractType + ", hiringDate=" + hiringDate + ", techLead="
-		+ techLead + ", jobTitle=" + jobTitle + "}";
+		+ techLead + ", jobTitle=" + jobTitle + ", avatar=" + avatar
+		+ ", description=" + description + "}";
     }
 
 }

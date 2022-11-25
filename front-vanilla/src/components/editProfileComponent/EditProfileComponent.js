@@ -51,7 +51,7 @@ export default class EditProfileComponent extends BaseFormComponent {
             <textarea name="description" id="description" class="form-control" rows="10"></textarea>
             <div class="form-text">Text with maximum of 1000 chars.</div>
     
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
               <button class="btn btn-primary me-md-2" type="submit">Update</button>
             </div>
           </form>
