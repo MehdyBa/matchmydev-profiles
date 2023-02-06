@@ -1,218 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
-      crossorigin="anonymous"
-    />
-    <!-- Google Fonts-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&family=Source+Sans+Pro:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <title>Search for Profiles mockup</title>
-    <link rel="stylesheet" href="style/search-profile.css" />
-    <link rel="icon" type="image/x-icon" href="./asset/favicon.png" />
-  </head>
-  <body>
-    <header class="bg-black fixed-top">
-      <nav class="navbar navbar-expand-md navbar-dark container-xl">
-        <span class="font-logo">
-          <span>match</span
-          ><span class="logo-center">my</span
-          ><span>dev</span>
-        </span>
-        <button
-          class="navbar-toggler me-2"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <!-- Google Fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@600&family=Source+Sans+Pro:wght@300;400;600&display=swap"
+    rel="stylesheet" />
 
-    <main class="container-xl my-5 pt-5">
-      <h1 class="pt-3">Search for developers profiles</h1>
-      <form class="mb-3 mt-4">
-        <label for="search" class="form-label">Search for developers</label>
-        <div class="input-group">
-          <input type="text" class="form-control" id="search" />
-          <span class="input-group-text"><i class="bi bi-search"></i></span>
-          <button class="btn" type="submit">Search</button>
-        </div>
-        <div class="form-text">
-          Please enter first or last name.
-        </div>
-      </form>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+  <title>Search for Profiles mockup</title>
+  <link rel="stylesheet" href="style/search-profile.css" />
+  <link rel="icon" type="image/x-icon" href="./asset/favicon.png" />
+</head>
 
-      <h2>Developers found</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-3 font-regular">
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Marshall Frank</p>
-              <p class="card-text">Externe</p>
-              <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2010/04/27</p>
-              </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
+<body>
+  <header class="bg-black fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark container-xl">
+      <span class="font-logo">
+        <span>match</span><span class="logo-center">my</span><span>dev</span>
+      </span>
+      <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </header>
+
+  <main class="container-xl my-5 pt-5">
+    <h1 class="pt-3">Search for developers profiles</h1>
+    <form class="mb-3 mt-4">
+      <label for="search" class="form-label">Search for developers</label>
+      <div class="input-group">
+        <input type="text" class="form-control" id="search" />
+        <span class="input-group-text"><i class="bi bi-search"></i></span>
+        <button class="btn" type="submit">Search</button>
+      </div>
+      <div class="form-text">
+        Please enter first or last name.
+      </div>
+    </form>
+
+    <h2>Developers found</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-3 font-regular">
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Marshall Frank</p>
+            <p class="card-text">Externe</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2010/04/27</p>
           </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Abazli Nibal</p>
-              <p class="card-text">Alternante</p>
-              <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/10/03</p>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Badaoui Mehdy</p>
-              <p class="card-text">Alternant</p>
-              <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/03/01</p>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Benallal Manal</p>
-              <p class="card-text">Alternante</p>
-              <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2020/08/12</p>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Da Silva Laurine</p>
-              <p class="card-text">CDI</p>
-              <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/01/10</p>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Gresset Lindsay</p>
-              <p class="card-text">Interne</p>
-              <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/07/27</p>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Kadziolka Ewa</p>
-              <p class="card-text">Interne</p>
-              <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/06/27</p>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Luton Thomas</p>
-              <p class="card-text">Interne</p>
-              <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/05/19</p>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Madinier Juliette</p>
-              <p class="card-text">Alternante</p>
-              <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/09/22</p>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Manneville Milena</p>
-              <p class="card-text">Interne</p>
-              <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/10/03</div>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Subasi Damla</p>
-              <p class="card-text">Externe</p>
-              <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/07/14</div>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Munsy Lisa</p>
-              <p class="card-text">Interne</p>
-              <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/10/03</div>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Raulet Olha</p>
-              <p class="card-text">Alternante</p>
-              <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/11/07</div>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Soltani Maroua</p>
-              <p class="card-text">Alternante</p>
-              <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/11/16</div>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <div class="card-body">
-              <p class="dev-name">Ait Mouhoub Massinissa</p>
-              <p class="card-text">VIP</p>
-              <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2001/12/31</div>
-            </div>
-            <div class="card-footer"><i class="bi bi-eye"></i></div>
-          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
         </div>
       </div>
-    </main>
-  </body>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Abazli Nibal</p>
+            <p class="card-text">Alternante</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/10/03</p>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Badaoui Mehdy</p>
+            <p class="card-text">Alternant</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/03/01</p>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Benallal Manal</p>
+            <p class="card-text">Alternante</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2020/08/12</p>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Da Silva Laurine</p>
+            <p class="card-text">CDI</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/01/10</p>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Gresset Lindsay</p>
+            <p class="card-text">Interne</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/07/27</p>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Kadziolka Ewa</p>
+            <p class="card-text">Interne</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/06/27</p>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Luton Thomas</p>
+            <p class="card-text">Interne</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/05/19</p>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Madinier Juliette</p>
+            <p class="card-text">Alternante</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/09/22</p>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Manneville Milena</p>
+            <p class="card-text">Interne</p>
+            <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/10/03</div>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Subasi Damla</p>
+            <p class="card-text">Externe</p>
+            <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/07/14</div>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Munsy Lisa</p>
+            <p class="card-text">Interne</p>
+            <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/10/03</div>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Raulet Olha</p>
+            <p class="card-text">Alternante</p>
+            <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/11/07</div>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Soltani Maroua</p>
+            <p class="card-text">Alternante</p>
+            <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2022/11/16</div>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <div class="card-body">
+            <p class="dev-name">Ait Mouhoub Massinissa</p>
+            <p class="card-text">VIP</p>
+            <div class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span> 2001/12/31</div>
+          </div>
+          <div class="card-footer"><i class="bi bi-eye"></i></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+
 </html>
