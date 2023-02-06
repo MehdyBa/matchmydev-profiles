@@ -4,7 +4,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +12,6 @@ import co.simplon.matchmydev.profiles.dtos.ProfileView;
 
 @RestController
 @RequestMapping("/profiles")
-@CrossOrigin
 public class ProfileController {
 
 	@GetMapping
