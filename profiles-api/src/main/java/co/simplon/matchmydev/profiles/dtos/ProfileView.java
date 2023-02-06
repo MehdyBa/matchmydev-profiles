@@ -4,128 +4,64 @@ import java.time.LocalDate;
 
 public class ProfileView {
 
-    private Long id;
+	private Long id;
 
-    private String firstName;
+	private String firstName;
 
-    private String lastName;
+	private String lastName;
 
-    private String email;
+	private String contractType;
 
-    private String identifier;
+	private LocalDate hiringDate;
 
-    private String jobTitle;
+	public ProfileView() {
+		// super();
+	}
 
-    private Boolean techLead;
+	public Long getId() {
+		return id;
+	}
 
-    private String contractType;
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-    private LocalDate hiringDate;
+	public String getFirstName() {
+		return firstName;
+	}
 
-    private String avatar;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
 
-    private String description;
+	public String getLastName() {
+		return lastName;
+	}
 
-    public ProfileView() {
-	// super();
-    }
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
 
-    public Long getId() {
-	return id;
-    }
+	public String getContractType() {
+		return contractType;
+	}
 
-    public void setId(Long id) {
-	this.id = id;
-    }
+	public void setContractType(String contractType) {
+		this.contractType = contractType;
+	}
 
-    public String getFirstName() {
-	return firstName;
-    }
+	public LocalDate getHiringDate() {
+		return hiringDate;
+	}
 
-    public void setFirstName(String firstName) {
-	this.firstName = firstName;
-    }
+	public void setHiringDate(LocalDate hiringDate) {
+		this.hiringDate = hiringDate;
+	}
 
-    public String getLastName() {
-	return lastName;
-    }
-
-    public void setLastName(String lastName) {
-	this.lastName = lastName;
-    }
-
-    public Boolean getTechLead() {
-	return techLead;
-    }
-
-    public void setTechLead(Boolean techLead) {
-	this.techLead = techLead;
-    }
-
-    public String getContractType() {
-	return contractType;
-    }
-
-    public void setContractType(String contractType) {
-	this.contractType = contractType;
-    }
-
-    public LocalDate getHiringDate() {
-	return hiringDate;
-    }
-
-    public void setHiringDate(LocalDate hiringDate) {
-	this.hiringDate = hiringDate;
-    }
-
-    public String getAvatar() {
-	return avatar;
-    }
-
-    public void setAvatar(String avatar) {
-	this.avatar = avatar;
-    }
-
-    public String getDescription() {
-	return description;
-    }
-
-    public void setDescription(String description) {
-	this.description = description;
-    }
-
-    public String getEmail() {
-	return email;
-    }
-
-    public void setEmail(String email) {
-	this.email = email;
-    }
-
-    public String getIdentifier() {
-	return identifier;
-    }
-
-    public void setIdentifier(String identifier) {
-	this.identifier = identifier;
-    }
-
-    public String getJobTitle() {
-	return jobTitle;
-    }
-
-    public void setJobTitle(String jobTitle) {
-	this.jobTitle = jobTitle;
-    }
-
-    @Override
-    public String toString() {
-	return "{id=" + id + ", firstName=" + firstName + ", lastName="
-		+ lastName + ", email=" + email + ", identifier=" + identifier
-		+ ", jobTitle=" + jobTitle + ", techLead=" + techLead
-		+ ", contractType=" + contractType + ", hiringDate="
-		+ hiringDate + ", avatar=" + avatar + ", description="
-		+ description + "}";
-    }
-
+	@Override
+	public String toString() {
+		return "ProfileView [id=" + id + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", contractType=" + contractType
+				+ ", hiringDate=" + hiringDate + "]";
+	}
 }

@@ -1,93 +1,35 @@
 package co.simplon.matchmydev.profiles.controllers;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.simplon.matchmydev.profiles.database.DataBase;
-import co.simplon.matchmydev.profiles.dtos.ProfileCreateDto;
-import co.simplon.matchmydev.profiles.dtos.ProfileUpdateDto;
 import co.simplon.matchmydev.profiles.dtos.ProfileView;
-import co.simplon.matchmydev.profiles.entities.Profile;
 
 @RestController
 @RequestMapping("/profiles")
 @CrossOrigin
 public class ProfileController {
 
-	@PostMapping
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void create(@RequestBody ProfileCreateDto inputs) {
-		Profile profile = new Profile();
-		profile.setFirstName(inputs.getFirstName());
-		profile.setLastName(inputs.getLastName());
-		profile.setEmail(inputs.getEmail());
-		profile.setIdentifier(inputs.getIdentifier());
-		profile.setJobTitle(inputs.getJobTitle());
-		profile.setHiringDate(inputs.getHiringDate());
-		profile.setContractType(inputs.getContractType());
-		profile.setAvatar(inputs.getAvatar());
-		profile.setDescription(inputs.getDescription());
-		DataBase.saveProfile(profile);
-		System.out.println(profile);
-	}
-
-	@PatchMapping("/{id}")
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void update(@RequestBody ProfileUpdateDto inputs,
-			@PathVariable("id") Long id) {
-		Profile profile = DataBase.findOne(id);
-		profile.getFirstName();
-		profile.getLastName();
-		profile.getContractType();
-		profile.getHiringDate();
-		profile.setAvatar(inputs.getAvatar());
-		profile.setDescription(inputs.getDescription());
-		DataBase.updateProfile(profile);
-		System.out.println(profile);
-
-	}
-
-	private static ProfileView buildProfileView(Profile profile) {
-		ProfileView view = new ProfileView();
-		view.setId(profile.getId());
-		view.setFirstName(profile.getFirstName());
-		view.setLastName(profile.getLastName());
-		view.setIdentifier(profile.getIdentifier());
-		view.setEmail(profile.getEmail());
-		view.setJobTitle(profile.getJobTitle());
-		view.setContractType(profile.getContractType());
-		view.setHiringDate(profile.getHiringDate());
-		view.setAvatar(profile.getAvatar());
-		view.setDescription(profile.getDescription());
-		return view;
-	}
-
-	@GetMapping("/{id}")
-	public ProfileView getById(@PathVariable("id") Long id) {
-		Profile profile = DataBase.findOne(id);
-		ProfileView view = buildProfileView(profile);
-		return view;
-	}
-
 	@GetMapping
 	public Collection<ProfileView> getAll() {
-		Collection<Profile> profiles = DataBase.findAll();
+
 		Collection<ProfileView> views = new ArrayList<>();
-		for (Profile profile : profiles) {
-			ProfileView view = buildProfileView(profile);
-			views.add(view);
-		}
+
+		ProfileView firstView = new ProfileView();
+		firstView.setId(1L);
+		firstView.setFirstName("Massi");
+		firstView.setLastName("The King");
+		firstView.setContractType("Intern");
+		LocalDate hiringDate = LocalDate.now();
+		firstView.setHiringDate(hiringDate);
+		views.add(firstView);
+
 		return views;
 	}
 
