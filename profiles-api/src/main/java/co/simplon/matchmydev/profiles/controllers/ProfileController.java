@@ -28,6 +28,15 @@ public class ProfileController {
 		firstView.setHiringDate(hiringDate);
 		views.add(firstView);
 
+		ProfileView secondView = new ProfileView();
+		secondView.setId(1L);
+		secondView.setFirstName("Milena");
+		secondView.setLastName("La Boss");
+		secondView.setContractType("Intern");
+		LocalDate secondHiringDate = LocalDate.now();
+		secondView.setHiringDate(secondHiringDate);
+		views.add(secondView);
+
 		return views;
 	}
 
