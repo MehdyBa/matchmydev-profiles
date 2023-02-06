@@ -1,5 +1,4 @@
 <script>
-import axios from 'axios'
 
 export default {
 
@@ -11,8 +10,8 @@ export default {
   },
 
   mounted() {
-    axios
-      .get('http://localhost:8080/profiles')
+   this.$axios
+      .get('/profiles')
       .then((response) => { this.profiles = response.data
         console.log(response)
       })
@@ -62,13 +61,13 @@ export default {
 
 <h2>Developers found</h2>
 
-<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-3 font-regular" id="profiles">
-  <div class="col">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 mb-3 font-regular" >
+  <div class="col"  v-for="profile in profiles">
         <div class="card h-100">
           <div class="card-body">
-            <p class="dev-name">Marshall Frank</p>
-            <p class="card-text">Externe</p>
-            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span>2010/04/27</p>
+            <p class="dev-name">{{ profile.firstName }} {{ profile.lastName }}</p>
+            <p class="card-text">{{ profile.contractType }}</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span>{{ profile.hiringDate }}</p>
             </div>
           <div class="card-footer"><i class="bi bi-eye"></i></div>
         </div>
@@ -168,8 +167,6 @@ body {
     text-align: end;
 
 }
-
-
 
 </style>
 
