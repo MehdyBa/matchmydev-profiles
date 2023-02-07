@@ -1,12 +1,25 @@
 <script>
+import dayjs from 'dayjs';
+
+
 
 export default {
 
+    
+
   data() {
     return {
+      dayjs,
       profiles : []
 
     }
+  },
+
+  methods: {
+    formatDate(date) {
+            return dayjs(date).format('MMM/DD/YYYY');
+        },
+
   },
 
   mounted() {
@@ -67,7 +80,7 @@ export default {
           <div class="card-body">
             <p class="dev-name">{{ profile.firstName }} {{ profile.lastName }}</p>
             <p class="card-text">{{ profile.contractType }}</p>
-            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span>{{ profile.hiringDate }}</p>
+            <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span>{{ formatDate(profile.hiringDate) }}</p>
             </div>
           <div class="card-footer"><i class="bi bi-eye"></i></div>
         </div>
@@ -76,97 +89,4 @@ export default {
 
   </main>
 
-
-
-
-
 </template>
-
-<style>
-body {
-    color:#000000;
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-/* Header css */
-
-.font-logo {
-    font-family: 'Source Code Pro', monospace;
-    font-weight: 600;
-    font-size: 2rem;
-    color: white;
-
-}
-.logo-center {
-    color: #f00;
-}
-.navbar {
-    padding-left: 0.75rem;
-    padding-right:0.75rem;
-}
-
-/* search profiles css */
-
-.btn {
-    background-color: #A9A9A9;
-    border-color: #A9A9A9 ;
-    letter-spacing: 0.1rem;
-    font-weight:600;
-}
-
-.btn:hover{
-    background-color: #DCDCDC;
-    border-color:#A9A9A9;
-    box-shadow : 0px 0px 5px 4px #DCDCDC;
-}
-
-.form-control{
-    border-right: none;
-}
-
-.form-control:focus{
-    border: none;
-    box-shadow: 0px 0px 5px 4px #DCDCDC;
-
-}
-
-.form-text {
-    color: #A9A9A9;
-}
-
-.form-label {
-    font-weight: 600;
-    
-}
-
-.input-group-text{
-    background-color: white;
-    border-left: none;
-    color:#A9A9A9;
-}
-
-.card {
-    height: 100%;
-    cursor: pointer;
-}
-
-.card:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-}
-
-.dev-name {
-    font-weight: bold;
-}
-
-.dev-name:hover {
-    text-decoration: underline;
-}
-
-.card-footer {
-    background-color: #DCDCDC;
-    text-align: end;
-
-}
-
-</style>
-

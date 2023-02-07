@@ -5,6 +5,7 @@ import router from './router'
 import axios from 'axios'
 
 
+
 // Création et configuration d'une instance axios
 const axiosInstance = axios.create({
     baseURL: 'http://localhost:8080'
