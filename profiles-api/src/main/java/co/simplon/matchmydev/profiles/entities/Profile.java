@@ -4,19 +4,11 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "profiles")
-public class Profile {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Long id;
+public class Profile extends AbstractEntity {
 
 	@Column(name = "first_name")
 	private String firstName;
@@ -50,14 +42,6 @@ public class Profile {
 
 	public Profile() {
 		// super();
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getFirstName() {
@@ -142,8 +126,8 @@ public class Profile {
 
 	@Override
 	public String toString() {
-		return "{id=" + id + ", firstName=" + firstName + ", lastName="
-				+ lastName + ", email=" + email + ", identifier=" + identifier
+		return "{ firstName=" + firstName + ", lastName=" + lastName
+				+ ", email=" + email + ", identifier=" + identifier
 				+ ", techLead=" + techLead + ", contractType=" + contractType
 				+ ", hiringDate=" + hiringDate + ", avatar=" + avatar
 				+ ", description=" + description + ", jobTitle=" + jobTitle
