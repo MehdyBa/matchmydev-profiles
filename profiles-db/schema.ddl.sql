@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS profiles;
+
+CREATE TABLE profiles (
+	id SERIAL PRIMARY KEY,
+	first_name VARCHAR(255) NOT NULL,
+	last_name VARCHAR(255) NOT NULL,
+	identifier VARCHAR(13) NOT NULL,
+	email VARCHAR(155) UNIQUE NOT NULL,
+	job_title VARCHAR(50) NOT NULL,
+	contract_type VARCHAR(50) NOT NULL,
+	hiring_date TIMESTAMP NOT NULL,
+	avatar VARCHAR(300) NOT NULL,
+	description VARCHAR(1000) NOT NULL,
+	tech_lead BOOLEAN NOT NULL
+
+)
