@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -25,8 +27,9 @@ public class Profile extends AbstractEntity {
 	@Column(name = "tech_lead")
 	private Boolean techLead;
 
-	@Column(name = "contract_type")
-	private String contractType;
+	@JoinColumn(name = "contract_id")
+	@ManyToOne
+	private ContractType contractType;
 
 	@Column(name = "hiring_date")
 	private LocalDate hiringDate;
@@ -84,11 +87,11 @@ public class Profile extends AbstractEntity {
 		this.techLead = techLead;
 	}
 
-	public String getContractType() {
+	public ContractType getContractType() {
 		return contractType;
 	}
 
-	public void setContractType(String contractType) {
+	public void setContractType(ContractType contractType) {
 		this.contractType = contractType;
 	}
 
@@ -126,12 +129,12 @@ public class Profile extends AbstractEntity {
 
 	@Override
 	public String toString() {
-		return "{ firstName=" + firstName + ", lastName=" + lastName
+		return "Profile [firstName=" + firstName + ", lastName=" + lastName
 				+ ", email=" + email + ", identifier=" + identifier
 				+ ", techLead=" + techLead + ", contractType=" + contractType
 				+ ", hiringDate=" + hiringDate + ", avatar=" + avatar
 				+ ", description=" + description + ", jobTitle=" + jobTitle
-				+ "}";
+				+ "]";
 	}
 
 }
