@@ -2,16 +2,17 @@ package co.simplon.matchmydev.profiles.dtos;
 
 import java.time.LocalDate;
 
+import co.simplon.matchmydev.profiles.entities.ContractType;
+
 public interface ProfileView {
-    Long getId();
+	Long getId();
 
-    String getFirstName();
-    // String getProfileFirstName();
+	String getFirstName();
+	// String getProfileFirstName();
 
-    String getLastName();
+	String getLastName();
 
-    String getContractType();
-    // ContractType getTypeName()
+	ContractType getName();
 
-    LocalDate getHiringDate();
+	LocalDate getHiringDate();
 }
