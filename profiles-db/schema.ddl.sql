@@ -13,7 +13,7 @@ CREATE TABLE profiles (
 	identifier VARCHAR(13) NOT NULL,
 	email VARCHAR(155) UNIQUE NOT NULL,
 	job_title VARCHAR(50) NOT NULL,
-	contract_id INTEGER,
+	contract_id INTEGER NOT NULL,
 	CONSTRAINT fk_contract_id
 		FOREIGN KEY (contract_id)
 		REFERENCES contract_types(id),
