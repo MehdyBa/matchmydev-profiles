@@ -9,18 +9,14 @@ import co.simplon.matchmydev.profiles.repositories.ProfileRepository;
 
 @Service
 public class ProfileServiceImpl implements ProfileService {
+    private ProfileRepository profiles;
 
-	private ProfileRepository profiles;
+    public ProfileServiceImpl(ProfileRepository profiles) {
+	this.profiles = profiles;
+    }
 
-	public ProfileServiceImpl(ProfileRepository profiles) {
-		this.profiles = profiles;
-
-	}
-
-	@Override
-	public Collection<ProfileView> getAll() {
-
-		return profiles.findAllProjectedBy();
-	}
-
+    @Override
+    public Collection<ProfileView> getAll() {
+	return profiles.findAllProjectedBy();
+    }
 }

@@ -7,15 +7,13 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-
     @Value("${profiles-api.cors.allowedOrigins}")
-    private String myAllowedApi;
+    private String allowedOrigins;
+    // Sting [] allowedOrigins if several URL
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-
-	registry.addMapping("/**").allowedOrigins(myAllowedApi)
+	registry.addMapping("/**").allowedOrigins(allowedOrigins)
 		.allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH");
-
     }
 }

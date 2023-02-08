@@ -3,15 +3,15 @@ package co.simplon.matchmydev.profiles.dtos;
 import java.time.LocalDate;
 
 public interface ProfileView {
+    Long getId();
 
-	Long getId();
+    String getFirstName();
+    // String getProfileFirstName();
 
-	String getFirstName();
+    String getLastName();
 
-	String getLastName();
+    String getContractType();
+    // ContractType getTypeName()
 
-	String getContractType();
-
-	LocalDate getHiringDate();
-
+    LocalDate getHiringDate();
 }
