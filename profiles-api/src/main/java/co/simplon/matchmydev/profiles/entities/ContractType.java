@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "contract_type")
-public class ContractType {
+@Table(name = "contract_types")
+public class ContractType extends AbstractEntity {
 
 	@Column(name = "name")
 	private String name;
