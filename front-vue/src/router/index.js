@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import SearchProfiles from '../views/SearchProfiles.vue'
+import SearchProfilesView from '../views/SearchProfilesView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'search profiles',
-      component: SearchProfiles
+      path: '/profiles',
+      name: 'search-profiles',
+      component: SearchProfilesView
     }
   ]
 })

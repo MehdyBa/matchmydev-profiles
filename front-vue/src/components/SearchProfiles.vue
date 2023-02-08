@@ -1,23 +1,19 @@
 <script>
 import dayjs from 'dayjs';
 
-
 export default {
-
-    
 
   data() {
     return {
       dayjs,
       profiles : []
-
     }
   },
 
   methods: {
     formatDate(date) {
             return dayjs(date).format('MMM/DD/YYYY');
-        },
+        }
 
   },
 
@@ -25,7 +21,6 @@ export default {
    this.$axios
       .get('/profiles')
       .then((response) => { this.profiles = response.data
-        console.log(response)
       })
   }
 }
@@ -34,27 +29,7 @@ export default {
 <template>
   
   <main id="main" class="container-xl my-5 pt-5">
-
-    <header class="bg-black fixed-top">
-            <nav class="navbar navbar-expand-md navbar-dark container-xl">
-                <span class="font-logo">
-                    <span>match</span><span class="logo-center">my</span><span>dev</span>
-                </span>
-                <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#/search-profiles">Search profiles</a>
-                    </li>
-                        <li class="nav-item">
-                    <a class="nav-link" href="#/edit-profile">My profile</a>
-                    </li>
-                </ul>
-                </div>
-            </nav>
-        </header>
+    
 
         <h1 class="pt-3">Search for developers profiles</h1>
 
