@@ -22,6 +22,7 @@ export default {
       .get('/profiles')
       .then((response) => { this.profiles = response.data
       })
+      
   }
 }
 </script>
@@ -53,7 +54,7 @@ export default {
         <div class="card h-100">
           <div class="card-body">
             <p class="dev-name">{{ profile.firstName }} {{ profile.lastName }}</p>
-            <p class="card-text">{{ profile.contractType }}</p>
+            <p class="card-text">{{ profile.contractTypeName }}</p>
             <p class="card-text"><span class="me-2 mb-2"><i class="bi bi-briefcase"></i></span>{{ formatDate(profile.hiringDate) }}</p>
             </div>
           <div class="card-footer"><i class="bi bi-eye"></i></div>
