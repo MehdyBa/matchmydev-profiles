@@ -23,7 +23,7 @@ public class ProfileServiceImpl implements ProfileService {
 
     @Override
     public ProfileDetailView getProfile(Long id) {
-	return profiles.findViewById(id);
+	return profiles.findProjectedById(id);
     }
 
 }

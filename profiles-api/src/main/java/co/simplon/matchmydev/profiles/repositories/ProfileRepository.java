@@ -12,5 +12,5 @@ public interface ProfileRepository extends JpaRepository<Profile, Long> {
 
     Collection<ProfileView> findAllProjectedBy();
 
-    ProfileDetailView findViewById(Long id);
+    ProfileDetailView findProjectedById(Long id);
 }
