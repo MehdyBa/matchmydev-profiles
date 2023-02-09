@@ -4,4 +4,4 @@ target/
 .classpath
 .project
 .settings
-.application.properties
+application.properties

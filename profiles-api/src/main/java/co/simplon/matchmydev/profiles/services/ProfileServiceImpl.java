@@ -4,6 +4,7 @@ import java.util.Collection;
 
 import org.springframework.stereotype.Service;
 
+import co.simplon.matchmydev.profiles.dtos.ProfileDetailView;
 import co.simplon.matchmydev.profiles.dtos.ProfileView;
 import co.simplon.matchmydev.profiles.repositories.ProfileRepository;
 
@@ -19,4 +20,10 @@ public class ProfileServiceImpl implements ProfileService {
     public Collection<ProfileView> getAll() {
 	return profiles.findAllProjectedBy();
     }
+
+    @Override
+    public ProfileDetailView getProfile(Long id) {
+	return profiles.findViewById(id);
+    }
+
 }
