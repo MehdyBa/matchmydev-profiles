@@ -65,3 +65,8 @@ export default {
   </main>
 
 </template>
+<style scoped>
+.form-control{
+    border-right: none;
+}
+</style>

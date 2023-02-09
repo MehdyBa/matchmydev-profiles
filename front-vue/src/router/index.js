@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import SearchProfilesView from "../views/SearchProfilesView.vue";
-import EditProfile from "../components/EditProfile.vue";
+import EditProfileView from "../views/EditProfileView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -13,7 +13,7 @@ const router = createRouter({
     {
       path: "/profiles/1",
       name: "edit-profile",
-      component: EditProfile,
+      component: EditProfileView,
     },
   ],
 });
