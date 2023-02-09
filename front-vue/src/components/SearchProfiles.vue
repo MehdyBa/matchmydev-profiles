@@ -12,7 +12,7 @@ export default {
 
   methods: {
     formatDate(date) {
-            return dayjs(date).format('MMM/DD/YYYY');
+            return dayjs(date).format('MMM DD, YYYY');
         }
 
   },
