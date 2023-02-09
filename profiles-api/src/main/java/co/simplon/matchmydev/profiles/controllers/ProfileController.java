@@ -3,11 +3,14 @@ package co.simplon.matchmydev.profiles.controllers;
 import java.util.Collection;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.simplon.matchmydev.profiles.dtos.ProfileDetailView;
+import co.simplon.matchmydev.profiles.dtos.ProfileUpdateDto;
 import co.simplon.matchmydev.profiles.dtos.ProfileView;
 import co.simplon.matchmydev.profiles.services.ProfileService;
 
@@ -31,6 +34,12 @@ public class ProfileController {
     @GetMapping("/{id}")
     public ProfileDetailView getProfile(@PathVariable("id") Long id) {
 	return service.getProfile(id);
+    }
+
+    @PatchMapping("/{id}")
+    public void update(@RequestBody ProfileUpdateDto inputs,
+	    @PathVariable("id") Long id) {
+	service.update(inputs, id);
     }
 
 }
