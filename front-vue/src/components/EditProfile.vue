@@ -6,14 +6,19 @@ export default {
   data() {
     return {
       dayjs,
-      profile : {}
+      profile : {},
+      description : ""
     }
   },
 
   methods: {
     formatDate(date) {
             return dayjs(date).format('MMM DD, YYYY');
-        }
+        },
+
+    async updateProfile(){
+      await this.$axios.patch('/profiles/1', {description : this.description})
+    }
 
   },
 
@@ -44,12 +49,12 @@ export default {
         </div>
         
           <div class="mb-3 mt-4">
-            <form>
-              <input class="form-control " type="file" id="formFile">
+            <form @submit.prevent="updateProfile">
+              <input class="form-control " type="file" id="formFile" :value="profile.avatar">
               <div class="form-text mb-3">Photo, avatar or any image.</div>
       
               <label for="description" class="form-label">Description</label>
-              <textarea name="description" id="description" class="form-control" rows="10">{{ profile.description }}</textarea>
+              <textarea v-model="description" name="description" id="description" class="form-control" rows="10">{{ profile.description }}</textarea>
               <div class="form-text">Text with a maximum of 1000 chars.</div>
       
               <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
