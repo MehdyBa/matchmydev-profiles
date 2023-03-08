@@ -15,14 +15,23 @@ export default {
     return {
       sizeFile: true,
       dayjs,
-      profile : {},
-      file: null
+      profile : {
+        firstName:null,
+        lastName:null
+      },
+      inputs:{
+        description:null,
+        file:null
+      }
     }
   },
 
   validations(){
     return{
-      sizeFile:{validSize}
+      inputs:{
+        file://valider taille du fichier si renseigné
+        description://valider longueur description 
+      }
     }
   },
 
@@ -54,8 +63,10 @@ export default {
   },
 
   async mounted() {
-    const response = await this.$axios.get('/profiles/1')  
-    this.profile = response.data 
+    const response = await this.$axios.get('/profiles/1') 
+    const data = response.data
+    this.profile.firstName = data.firstName
+    this.inputs.description = data.description
   }
 }
 </script>
@@ -84,7 +95,7 @@ export default {
               <div class="form-text mb-3" v-else>Photo, avatar or any image.</div>
       
               <label for="description" class="form-label">Description</label>
-              <textarea v-model="profile.description" name="description" id="description" class="form-control" rows="10">{{ profile.description }}</textarea>
+              <textarea v-model.trim="profile.description" name="description" id="description" class="form-control" rows="10">{{ profile.description }}</textarea>
               <div class="form-text">Text with a maximum of 1000 chars.</div>
       
               <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
