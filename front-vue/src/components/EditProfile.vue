@@ -1,14 +1,28 @@
 <script>
 import { looseEqual } from '@vue/shared';
 import dayjs from 'dayjs';
+import { useVuelidate } from '@vuelidate/core'
+import { maxLength } from '@vuelidate/validators'
+
+const validSize = (value) => value === true
 
 export default {
+  setup() {
+      return { v$: useVuelidate()}
+  },
 
   data() {
     return {
+      sizeFile: true,
       dayjs,
       profile : {},
       file: null
+    }
+  },
+
+  validations(){
+    return{
+      sizeFile:{validSize}
     }
   },
 
@@ -18,14 +32,24 @@ export default {
     },
 
     async updateProfile(){
-      const formData = new FormData()
-      formData.append('avatar', this.file)
-      formData.append('description', this.profile.description)
-      const response = await this.$axios.patch('/profiles/1', formData);
+      const valid = await this.v$.$validate();
+      if(valid){
+        const formData = new FormData()
+        formData.append('avatar', this.file)
+        formData.append('description', this.profile.description.trim())
+        const response = await this.$axios.patch('/profiles/1', formData);
+      }
     },
 
     handleFileUpload(event){
-      this.file = event.target.files[0]
+      if(event.target.files[0].size < 10000){
+        this.file = event.target.files[0]
+        this.sizeFile = true
+        console.log("Good size : "+ this.file.size)
+      }else{
+       this.sizeFile = false
+       console.log("Too heavy : "+ event.target.files[0].size)
+      }
     }
   },
 
@@ -54,8 +78,10 @@ export default {
         
           <div class="mb-3 mt-4">
             <form @submit.prevent="updateProfile" >
-              <input class="form-control " type="file" id="formFile" @change="handleFileUpload">
-              <div class="form-text mb-3">Photo, avatar or any image.</div>
+              <input class="form-control " type="file" id="formFile" accept="image/png,image/gif,image/jpeg"  @change="handleFileUpload"
+                :class="{'is-invalid': v$.sizeFile.$error}">
+              <div class="form-text text-danger" v-if="v$.sizeFile.$error">Image size must be less than 500ko</div>
+              <div class="form-text mb-3" v-else>Photo, avatar or any image.</div>
       
               <label for="description" class="form-label">Description</label>
               <textarea v-model="profile.description" name="description" id="description" class="form-control" rows="10">{{ profile.description }}</textarea>
