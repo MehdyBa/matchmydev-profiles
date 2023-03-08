@@ -1,23 +1,33 @@
 package co.simplon.matchmydev.profiles.dtos;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public class ProfileUpdateDto {
 
-    private String description;
+	private String description;
 
-    public String getDescription() {
-	return description;
-    }
+	private MultipartFile avatar;
 
-    public void setDescription(String description) {
-	this.description = description;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    @Override
-    public String toString() {
-	return "ProfileUpdateDto [description=" + description + "]";
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public ProfileUpdateDto() {
-    }
+	public MultipartFile getAvatar() {
+		return avatar;
+	}
+
+	public void setAvatar(MultipartFile avatar) {
+		this.avatar = avatar;
+	}
+
+	@Override
+	public String toString() {
+		return "ProfileUpdateDto [description=" + description + ", avatar="
+				+ avatar + "]";
+	}
 
 }

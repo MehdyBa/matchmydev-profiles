@@ -1,4 +1,5 @@
 <script>
+import { looseEqual } from '@vue/shared';
 import dayjs from 'dayjs';
 
 export default {
@@ -7,27 +8,30 @@ export default {
     return {
       dayjs,
       profile : {},
-      description : ""
+      file: null
     }
   },
 
   methods: {
     formatDate(date) {
-            return dayjs(date).format('MMM DD, YYYY');
-        },
+      return dayjs(date).format('MMM DD, YYYY');
+    },
 
     async updateProfile(){
-      await this.$axios.patch('/profiles/1', {description : this.description})
-    }
+      const formData = new FormData()
+      formData.append('avatar', this.file)
+      formData.append('description', this.profile.description)
+      const response = await this.$axios.patch('/profiles/1', formData);
+    },
 
+    handleFileUpload(event){
+      this.file = event.target.files[0]
+    }
   },
 
-  mounted() {
-   this.$axios
-      .get('/profiles/1')
-      .then((response) => { this.profile = response.data
-      })
-      
+  async mounted() {
+    const response = await this.$axios.get('/profiles/1')  
+    this.profile = response.data 
   }
 }
 </script>
@@ -49,12 +53,12 @@ export default {
         </div>
         
           <div class="mb-3 mt-4">
-            <form @submit.prevent="updateProfile">
-              <input class="form-control " type="file" id="formFile" :value="profile.avatar">
+            <form @submit.prevent="updateProfile" >
+              <input class="form-control " type="file" id="formFile" @change="handleFileUpload">
               <div class="form-text mb-3">Photo, avatar or any image.</div>
       
               <label for="description" class="form-label">Description</label>
-              <textarea v-model="description" name="description" id="description" class="form-control" rows="10">{{ profile.description }}</textarea>
+              <textarea v-model="profile.description" name="description" id="description" class="form-control" rows="10">{{ profile.description }}</textarea>
               <div class="form-text">Text with a maximum of 1000 chars.</div>
       
               <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
