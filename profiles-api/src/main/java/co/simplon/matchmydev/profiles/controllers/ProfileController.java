@@ -5,7 +5,6 @@ import java.util.Collection;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,15 +30,14 @@ public class ProfileController {
 	return service.getAll();
     }
 
-    @GetMapping("/{id}")
-    public ProfileDetailView getProfile(@PathVariable("id") Long id) {
-	return service.getProfile(id);
+    @GetMapping("/my")
+    public ProfileDetailView getProfile() {
+	return service.getProfile(1L);
     }
 
-    @PatchMapping("/{id}")
-    public void update(@ModelAttribute ProfileUpdateDto inputs,
-	    @PathVariable("id") Long id) {
-	service.update(inputs, id);
+    @PatchMapping("/my")
+    public void update(@ModelAttribute ProfileUpdateDto inputs) {
+	service.update(inputs, 1L);
 
 	System.out.println(inputs.getAvatar().getOriginalFilename());
 
