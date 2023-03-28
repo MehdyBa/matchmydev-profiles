@@ -1,4 +1,4 @@
-package co.simplon.matchmydev.profiles.fileSizeAnnotation;
+package co.simplon.matchmydev.profiles.Validation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

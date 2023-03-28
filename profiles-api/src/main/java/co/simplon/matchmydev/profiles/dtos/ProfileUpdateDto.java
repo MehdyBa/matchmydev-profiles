@@ -2,13 +2,13 @@ package co.simplon.matchmydev.profiles.dtos;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import co.simplon.matchmydev.profiles.fileSizeAnnotation.MaxSize;
+import co.simplon.matchmydev.profiles.Validation.MaxSize;
 
 public class ProfileUpdateDto {
 
 	private String description;
 
-	@MaxSize(maxSizeInMB = 10)
+	@MaxSize
 	private MultipartFile avatar;
 
 	public String getDescription() {

@@ -41,10 +41,8 @@ public class ProfileController {
 	public void update(@Valid @ModelAttribute ProfileUpdateDto inputs) {
 		service.update(inputs, 1L);
 
-		float fileSize = inputs.getAvatar().getSize();
 		System.out.println(inputs.getAvatar().getOriginalFilename());
 		System.out.println(inputs.getAvatar().getSize());
-		System.out.println(fileSize + "fileSize");
 		System.out.println(inputs.getDescription());
 
 	}

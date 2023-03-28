@@ -1,4 +1,4 @@
-package co.simplon.matchmydev.profiles.fileSizeAnnotation;
+package co.simplon.matchmydev.profiles.Validation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -8,13 +8,8 @@ import org.springframework.web.multipart.MultipartFile;
 public class MaxSizeValidator
 		implements ConstraintValidator<MaxSize, MultipartFile> {
 
-	private static final Integer MB = 1024 * 1024;
-
-	private long maxSizeInMB;
-
 	@Override
-	public void initialize(MaxSize maxSize) {
-		this.maxSizeInMB = maxSize.maxSizeInMB();
+	public void initialize(MaxSize constraintAnnotation) {
 	}
 
 	@Override
@@ -25,6 +20,6 @@ public class MaxSizeValidator
 			return true;
 		}
 
-		return avatar.getSize() < (maxSizeInMB * MB);
+		return avatar.getSize() < (1024 * 1024);
 	}
 }
