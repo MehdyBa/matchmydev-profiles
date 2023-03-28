@@ -2,6 +2,8 @@ package co.simplon.matchmydev.profiles.controllers;
 
 import java.util.Collection;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -17,30 +19,34 @@ import co.simplon.matchmydev.profiles.services.ProfileService;
 @RequestMapping("/profiles")
 public class ProfileController {
 
-    private ProfileService service;
+	private ProfileService service;
 
-    public ProfileController(ProfileService service) {
+	public ProfileController(ProfileService service) {
 
-	this.service = service;
-    }
+		this.service = service;
+	}
 
-    @GetMapping
-    public Collection<ProfileView> getAll() {
+	@GetMapping
+	public Collection<ProfileView> getAll() {
 
-	return service.getAll();
-    }
+		return service.getAll();
+	}
 
-    @GetMapping("/my")
-    public ProfileDetailView getProfile() {
-	return service.getProfile(1L);
-    }
+	@GetMapping("/my")
+	public ProfileDetailView getProfile() {
+		return service.getProfile(1L);
+	}
 
-    @PatchMapping("/my")
-    public void update(@ModelAttribute ProfileUpdateDto inputs) {
-	service.update(inputs, 1L);
+	@PatchMapping("/my")
+	public void update(@Valid @ModelAttribute ProfileUpdateDto inputs) {
+		service.update(inputs, 1L);
 
-	System.out.println(inputs.getAvatar().getOriginalFilename());
+		float fileSize = inputs.getAvatar().getSize();
+		System.out.println(inputs.getAvatar().getOriginalFilename());
+		System.out.println(inputs.getAvatar().getSize());
+		System.out.println(fileSize + "fileSize");
+		System.out.println(inputs.getDescription());
 
-    }
+	}
 
 }

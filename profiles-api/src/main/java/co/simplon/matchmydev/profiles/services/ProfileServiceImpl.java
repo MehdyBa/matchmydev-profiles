@@ -21,45 +21,45 @@ import co.simplon.matchmydev.profiles.repositories.ProfileRepository;
 
 @Service
 public class ProfileServiceImpl implements ProfileService {
-    private ProfileRepository profiles;
+	private ProfileRepository profiles;
 
-    @Value("${profiles-api.uploads.location}")
-    private String uploadDir;
+	@Value("${profiles-api.uploads.location}")
+	private String uploadDir;
 
-    public ProfileServiceImpl(ProfileRepository profiles) {
-	this.profiles = profiles;
-    }
-
-    @Override
-    public Collection<ProfileView> getAll() {
-	return profiles.findAllProjectedBy();
-    }
-
-    @Override
-    public ProfileDetailView getProfile(Long id) {
-	return profiles.findProjectedById(id);
-    }
-
-    @Override
-    public void update(ProfileUpdateDto inputs, Long id) {
-	Profile entity = profiles.findById(id).get();
-	entity.setDescription(inputs.getDescription());
-	MultipartFile file = inputs.getAvatar();
-	String baseName = UUID.randomUUID().toString();
-	String fileName = baseName + ".gif";
-	entity.setAvatar(fileName);
-	profiles.save(entity);
-	store(file, fileName);
-
-    }
-
-    private void store(MultipartFile file, String fileName) {
-	Path uploadPath = Paths.get(uploadDir);
-	Path target = uploadPath.resolve(fileName);
-	try (InputStream in = file.getInputStream()) {
-	    Files.copy(in, target, StandardCopyOption.REPLACE_EXISTING);
-	} catch (IOException ex) {
-	    throw new RuntimeException(ex);
+	public ProfileServiceImpl(ProfileRepository profiles) {
+		this.profiles = profiles;
 	}
-    }
+
+	@Override
+	public Collection<ProfileView> getAll() {
+		return profiles.findAllProjectedBy();
+	}
+
+	@Override
+	public ProfileDetailView getProfile(Long id) {
+		return profiles.findProjectedById(id);
+	}
+
+	@Override
+	public void update(ProfileUpdateDto inputs, Long id) {
+		Profile entity = profiles.findById(id).get();
+		entity.setDescription(inputs.getDescription());
+		MultipartFile file = inputs.getAvatar();
+		String baseName = UUID.randomUUID().toString();
+		String fileName = baseName + ".jpg";
+		entity.setAvatar(fileName);
+		profiles.save(entity);
+		store(file, fileName);
+
+	}
+
+	private void store(MultipartFile file, String fileName) {
+		Path uploadPath = Paths.get(uploadDir);
+		Path target = uploadPath.resolve(fileName);
+		try (InputStream in = file.getInputStream()) {
+			Files.copy(in, target, StandardCopyOption.REPLACE_EXISTING);
+		} catch (IOException ex) {
+			throw new RuntimeException(ex);
+		}
+	}
 }
