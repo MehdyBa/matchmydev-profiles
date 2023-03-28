@@ -1,4 +1,4 @@
-package co.simplon.matchmydev.profiles.Validation;
+package co.simplon.matchmydev.profiles.validation;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
