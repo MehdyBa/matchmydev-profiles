@@ -11,7 +11,7 @@ const router = createRouter({
       component: SearchProfilesView,
     },
     {
-      path: "/profiles/1",
+      path: "/profiles/my",
       name: "edit-profile",
       component: EditProfileView,
     },

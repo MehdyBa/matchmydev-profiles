@@ -1,5 +1,6 @@
-DROP TABLE IF EXISTS contract_types;
 DROP TABLE IF EXISTS profiles;
+DROP TABLE IF EXISTS contract_types;
+
 
 CREATE TABLE contract_types(
 	id SERIAL PRIMARY KEY,
@@ -18,8 +19,8 @@ CREATE TABLE profiles (
 		FOREIGN KEY (contract_id)
 		REFERENCES contract_types(id),
 	hiring_date TIMESTAMP NOT NULL,
-	avatar VARCHAR(300) NOT NULL,
-	description VARCHAR(1000) NOT NULL,
+	avatar VARCHAR(300),
+	description VARCHAR(1000),
 	tech_lead BOOLEAN NOT NULL
 
 )
