@@ -37,7 +37,7 @@ export default {
         file: {
           maxValue:
            (file) => {
-            return this.inputs.file && file.size < 512000 ? true : false 
+            return file.size < 512000 ? true : false 
           }
         } ,
         description: { 
@@ -76,9 +76,7 @@ export default {
           formData.append('avatar', this.inputs.file)
           formData.append('description', this.inputs.description)
           await this.$axios.patch('/profiles/my', formData);
-        } 
-        console.log("avatar = "+ this.inputs.file)  
-        console.log("description = "+ this.inputs.description);     
+        }     
     },
 
     async handleFileUpload(event){
@@ -88,8 +86,6 @@ export default {
 
   async mounted() {
     this.getProfile();
-    console.log(this.inputs.file)
-    
   }
 }
 </script>
