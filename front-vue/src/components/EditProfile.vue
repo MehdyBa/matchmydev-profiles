@@ -37,11 +37,12 @@ export default {
         file: {
           maxValue:
            (file) => {
-            return file.size > 512000 ? false : true
+            
+            return file === null || (file.size < 512000) 
           }
         } ,
         description: { 
-          maxLength: maxLength(1000) 
+          maxLength: maxLength(1000)
         }
 
       }
