@@ -1,4 +1,4 @@
-package co.simplon.matchmydev.profiles.validation;
+package co.simplon.matchmydev.profiles.customValidation;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

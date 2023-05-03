@@ -38,12 +38,9 @@ public class ProfileController {
 	}
 
 	@PatchMapping("/my")
-	public void update(@Valid @ModelAttribute ProfileUpdateDto inputs) {
+	public void update(@ModelAttribute @Valid ProfileUpdateDto inputs) {
 		service.update(inputs, 1L);
-
-		System.out.println(inputs.getAvatar().getOriginalFilename());
-		System.out.println(inputs.getAvatar().getSize());
-		System.out.println(inputs.getDescription());
+		System.out.println(inputs.getAvatar().getContentType());
 
 	}
 
