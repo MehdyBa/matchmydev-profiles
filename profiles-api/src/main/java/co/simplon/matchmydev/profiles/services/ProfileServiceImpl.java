@@ -21,7 +21,6 @@ import co.simplon.matchmydev.profiles.repositories.ProfileRepository;
 
 @Service
 public class ProfileServiceImpl implements ProfileService {
-    private static final String File = null;
 
     private ProfileRepository profiles;
 
@@ -45,19 +44,17 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public void update(ProfileUpdateDto inputs, Long id) {
 	Profile entity = profiles.findById(id).get();
-	if (entity.getAvatar() != null) {
-	    Path oldAvatar = Paths.get(uploadDir, entity.getAvatar());
-	    oldAvatar.toFile().delete();
-	}
 	if (!inputs.getAvatar().isEmpty()) {
+	    if (!entity.getAvatar().isEmpty()) {
+		Path oldAvatar = Paths.get(uploadDir, entity.getAvatar());
+		oldAvatar.toFile().delete();
+	    }
 	    MultipartFile file = inputs.getAvatar();
 	    String baseName = UUID.randomUUID().toString();
 	    String fileName = baseName
 		    + inputs.getAvatar().getOriginalFilename();
 	    entity.setAvatar(fileName);
 	    store(file, fileName);
-	} else {
-	    entity.setAvatar(null);
 	}
 	entity.setDescription(inputs.getDescription());
 	profiles.save(entity);

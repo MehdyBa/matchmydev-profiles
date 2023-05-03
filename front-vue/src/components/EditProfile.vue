@@ -1,7 +1,7 @@
 <script>
 import dayjs from 'dayjs';
 import { useVuelidate } from '@vuelidate/core'
-import { maxLength, maxValue, minLength,minValue } from '@vuelidate/validators'
+import { maxLength, maxValue } from '@vuelidate/validators'
 
 export default {
   setup() {
@@ -10,7 +10,7 @@ export default {
 
   data() {
     return {
-      fileSystem: "http://localhost:5500/images/",
+      fileSystem: import.meta.env.VITE_IMG_BASE_URL,
       sizeFile: true,
       dayjs,
       profile : {
@@ -37,7 +37,7 @@ export default {
         file: {
           maxValue:
            (file) => {
-            return file.size < 512000 ? true : false 
+            return file.size > 512000 ? false : true
           }
         } ,
         description: { 
