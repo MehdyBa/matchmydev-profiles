@@ -2,6 +2,8 @@ package co.simplon.matchmydev.profiles.controllers;
 
 import java.util.Collection;
 
+import javax.validation.Valid;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -36,10 +38,9 @@ public class ProfileController {
     }
 
     @PatchMapping("/my")
-    public void update(@ModelAttribute ProfileUpdateDto inputs) {
+    public void update(@ModelAttribute @Valid ProfileUpdateDto inputs) {
 	service.update(inputs, 1L);
-
-	System.out.println(inputs.getAvatar().getOriginalFilename());
+	System.out.println(inputs.getAvatar().getContentType());
 
     }
 

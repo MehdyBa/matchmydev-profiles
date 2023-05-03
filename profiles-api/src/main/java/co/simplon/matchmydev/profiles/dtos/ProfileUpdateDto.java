@@ -2,32 +2,35 @@ package co.simplon.matchmydev.profiles.dtos;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import co.simplon.matchmydev.profiles.customValidation.FileType;
+
 public class ProfileUpdateDto {
 
-	private String description;
+    private String description;
 
-	private MultipartFile avatar;
+    @FileType
+    private MultipartFile avatar;
 
-	public String getDescription() {
-		return description;
-	}
+    public String getDescription() {
+	return description;
+    }
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public void setDescription(String description) {
+	this.description = description;
+    }
 
-	public MultipartFile getAvatar() {
-		return avatar;
-	}
+    public MultipartFile getAvatar() {
+	return avatar;
+    }
 
-	public void setAvatar(MultipartFile avatar) {
-		this.avatar = avatar;
-	}
+    public void setAvatar(MultipartFile avatar) {
+	this.avatar = avatar;
+    }
 
-	@Override
-	public String toString() {
-		return "ProfileUpdateDto [description=" + description + ", avatar="
-				+ avatar + "]";
-	}
+    @Override
+    public String toString() {
+	return "ProfileUpdateDto [description=" + description + ", avatar="
+		+ avatar + "]";
+    }
 
 }
