@@ -19,29 +19,26 @@ import co.simplon.matchmydev.profiles.services.ProfileService;
 @RequestMapping("/profiles")
 public class ProfileController {
 
-	private ProfileService service;
+    private ProfileService service;
 
-	public ProfileController(ProfileService service) {
+    public ProfileController(ProfileService service) {
 
-		this.service = service;
-	}
+	this.service = service;
+    }
 
-	@GetMapping
-	public Collection<ProfileView> getAll() {
+    @GetMapping
+    public Collection<ProfileView> getAll() {
 
-		return service.getAll();
-	}
+	return service.getAll();
+    }
 
-	@GetMapping("/my")
-	public ProfileDetailView getProfile() {
-		return service.getProfile(1L);
-	}
+    @GetMapping("/my")
+    public ProfileDetailView getProfile() {
+	return service.getProfile(1L);
+    }
 
-	@PatchMapping("/my")
-	public void update(@ModelAttribute @Valid ProfileUpdateDto inputs) {
-		service.update(inputs, 1L);
-		System.out.println(inputs.getAvatar().getContentType());
-
-	}
-
+    @PatchMapping("/my")
+    public void update(@ModelAttribute @Valid ProfileUpdateDto inputs) {
+	service.update(inputs, 1L);
+    }
 }
