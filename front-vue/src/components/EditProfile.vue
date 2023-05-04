@@ -1,7 +1,7 @@
 <script>
 import dayjs from 'dayjs';
 import { useVuelidate } from '@vuelidate/core'
-import { maxLength } from '@vuelidate/validators'
+import { maxLength, maxValue } from '@vuelidate/validators'
 
 export default {
   setup() {
@@ -10,6 +10,7 @@ export default {
 
   data() {
     return {
+      fileSystem: import.meta.env.VITE_IMG_BASE_URL,
       sizeFile: true,
       dayjs,
       profile : {
@@ -21,13 +22,11 @@ export default {
         hiringDate: null, 
         contractType: null,
         avatar: null
-
-
       },
 
       inputs:{
         description: null,
-        file: null 
+        file: null
       }
     }
   },
@@ -38,11 +37,12 @@ export default {
         file: {
           maxValue:
            (file) => {
-            return file.size < 512000 ? true : false 
+            
+            return file === null || (file.size < 512000) 
           }
         } ,
         description: { 
-          maxLength: maxLength(1000) 
+          maxLength: maxLength(1000)
         }
 
       }
@@ -54,16 +54,32 @@ export default {
       return dayjs(date).format('MMM DD, YYYY');
     },
 
+    async getProfile(){
+      const response = await this.$axios.get('/profiles/my') 
+      const data = response.data
+      this.profile.firstName = data.firstName
+      this.profile.lastName = data.lastName
+      this.profile.email = data.email
+      this.profile.identifier = data.identifier
+      this.profile.jobTitle = data.jobTitle
+      this.profile.hiringDate = data.hiringDate
+      this.profile.contractType = data.contractype
+      this.profile.avatar = data.avatar
+
+      this.inputs.description = data.description
+    },
+
     async updateProfile(){
         const valid = await this.v$.$validate();
 
         if (valid) {
           const formData = new FormData()
-          formData.append('avatar', this.inputs.file)
+          if(this.inputs.file != null){
+            formData.append('avatar', this.inputs.file)
+          }
           formData.append('description', this.inputs.description)
           await this.$axios.patch('/profiles/my', formData);
-        }
-        
+        }     
     },
 
     async handleFileUpload(event){
@@ -72,17 +88,7 @@ export default {
   },
 
   async mounted() {
-    const response = await this.$axios.get('/profiles/my') 
-    const data = response.data
-    this.profile.firstName = data.firstName
-    this.profile.lastName = data.lastName
-    this.profile.email = data.email
-    this.profile.identifier = data.identifier
-    this.profile.jobTitle = data.jobTitle
-    this.profile.hiringDate = data.hiringDate
-    this.profile.contractType = data.contractype
-    this.profile.avatar = data.avatar
-    this.inputs.description = data.description
+    this.getProfile();
   }
 }
 </script>
@@ -91,7 +97,7 @@ export default {
   <h1>My Profile</h1>
   <div class="row row-cols-1 row-cols-md-2 mb-3 mt-4">
           <div class="col-md-4 mb-5">
-            <img :src="profile.avatar" class="rounded img-fluid">
+            <img :src="fileSystem + profile.avatar" class="rounded img-fluid">
           </div>
           <div class="col-md-4">
             <h2 class="profile-dev-name">{{profile.firstName}} {{profile.lastName}}</h2>
@@ -104,9 +110,8 @@ export default {
         </div>
         
           <div class="mb-3 mt-4">
-            <form @submit="updateProfile" >
-              <input  :class="{'is-invalid': v$.inputs.file.$error}" class="form-control " type="file" id="formFile" accept="image/png,image/gif,image/jpeg"  @change="handleFileUpload"
-              >
+            <form novalidate @submit.prevent="updateProfile" >
+              <input  :class="{'is-invalid': v$.inputs.file.$error}" class="form-control " type="file" id="formFile" accept="image/png,image/gif,image/jpeg"  @change="handleFileUpload">
               <div class="form-text text-danger" v-if="v$.inputs.file.$error">Image size must be less than 500ko</div>
               <div class="form-text mb-3" v-else>Photo, avatar or any image.</div>
               
