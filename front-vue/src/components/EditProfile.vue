@@ -74,7 +74,9 @@ export default {
 
         if (valid) {
           const formData = new FormData()
-          formData.append('avatar', this.inputs.file)
+          if(this.inputs.file != null){
+            formData.append('avatar', this.inputs.file)
+          }
           formData.append('description', this.inputs.description)
           await this.$axios.patch('/profiles/my', formData);
         }     

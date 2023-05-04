@@ -8,6 +8,9 @@ public class ProfileUpdateDto {
 
     private MultipartFile avatar;
 
+    public ProfileUpdateDto() {
+    }
+
     public String getDescription() {
 	return description;
     }

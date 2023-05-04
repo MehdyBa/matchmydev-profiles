@@ -44,7 +44,7 @@ public class ProfileServiceImpl implements ProfileService {
     @Override
     public void update(ProfileUpdateDto inputs, Long id) {
 	Profile entity = profiles.findById(id).get();
-	if (!inputs.getAvatar().isEmpty()) {
+	if ((inputs.getAvatar() != null)) {
 	    if (!entity.getAvatar().isEmpty()) {
 		Path oldAvatar = Paths.get(uploadDir, entity.getAvatar());
 		oldAvatar.toFile().delete();
@@ -56,6 +56,7 @@ public class ProfileServiceImpl implements ProfileService {
 	    entity.setAvatar(fileName);
 	    store(file, fileName);
 	}
+
 	entity.setDescription(inputs.getDescription());
 	profiles.save(entity);
     }
