@@ -13,14 +13,17 @@ public class FileTypeValidator
 
     private static final List<String> VALID_FILE_TYPES = new ArrayList<String>();
     static {
+
 	VALID_FILE_TYPES.add("image/gif");
 	VALID_FILE_TYPES.add("image/png");
 	VALID_FILE_TYPES.add("image/jpeg");
     }
 
+    // it's in this method that we defined our validation rules
     @Override
     public boolean isValid(MultipartFile value,
 	    ConstraintValidatorContext context) {
+
 	if (value == null) {
 	    return true;
 	}
