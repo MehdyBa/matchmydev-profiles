@@ -44,10 +44,8 @@ public class ProfileServiceImpl implements ProfileService {
     public void update(ProfileUpdateDto inputs, Long id) {
 	Profile entity = profiles.findById(id).get();
 	if ((inputs.getAvatar() != null)) {
-	    if (!entity.getAvatar().isEmpty()) {
-		Path oldAvatar = Paths.get(uploadDir, entity.getAvatar());
-		oldAvatar.toFile().delete();
-	    }
+	    Path oldAvatar = Paths.get(uploadDir, entity.getAvatar());
+	    oldAvatar.toFile().delete();
 	    MultipartFile file = inputs.getAvatar();
 	    String baseName = UUID.randomUUID().toString();
 	    String fileName = baseName
@@ -55,7 +53,6 @@ public class ProfileServiceImpl implements ProfileService {
 	    entity.setAvatar(fileName);
 	    store(file, fileName);
 	}
-
 	entity.setDescription(inputs.getDescription());
 	profiles.save(entity);
     }
