@@ -76,18 +76,21 @@
           }
           formData.append("description", this.inputs.description);
           await this.$axios.patch("/profiles/my", formData);
+          console.log("valid");
+          console.log("this.inputs.file", this.inputs.file);
+          console.log("this.inputs.description", this.inputs.description);
         }
       },
 
       async handleFileUpload(event) {
-        if (this.inputs.file) {
+        //without condition, we have null as event.target.files[0] value after escape
+        if (event.target.files[0] != null) {
           this.inputs.file = event.target.files[0];
         }
       },
     },
-
     async mounted() {
-      this.getProfile();
+      this.getProfile(false);
     },
   };
 </script>
@@ -122,6 +125,7 @@
           id="formFile"
           accept="image/png,image/gif,image/jpeg"
           @change="handleFileUpload"
+          @keyup.esc=""
         />
         <div class="form-text text-danger" v-if="v$.inputs.file.$error">
           Image size must be less than 500ko
