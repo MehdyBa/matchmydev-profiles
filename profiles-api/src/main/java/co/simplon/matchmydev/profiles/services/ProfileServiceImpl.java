@@ -11,6 +11,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import co.simplon.matchmydev.profiles.dtos.ProfileDetailView;
@@ -20,6 +21,7 @@ import co.simplon.matchmydev.profiles.entities.Profile;
 import co.simplon.matchmydev.profiles.repositories.ProfileRepository;
 
 @Service
+@Transactional(readOnly = true)
 public class ProfileServiceImpl implements ProfileService {
     private ProfileRepository profiles;
 
@@ -41,17 +43,18 @@ public class ProfileServiceImpl implements ProfileService {
     }
 
     @Override
+    @Transactional
     public void update(ProfileUpdateDto inputs, Long id) {
 	Profile entity = profiles.findById(id).get();
 	if ((inputs.getAvatar() != null)) {
 	    Path oldAvatar = Paths.get(uploadDir, entity.getAvatar());
-	    oldAvatar.toFile().delete();
 	    MultipartFile file = inputs.getAvatar();
 	    String baseName = UUID.randomUUID().toString();
 	    String fileName = baseName
 		    + inputs.getAvatar().getOriginalFilename();
 	    entity.setAvatar(fileName);
 	    store(file, fileName);
+	    oldAvatar.toFile().delete();
 	}
 	entity.setDescription(inputs.getDescription());
 	profiles.save(entity);
